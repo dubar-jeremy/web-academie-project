@@ -1,0 +1,549 @@
+
+/*
+
+  >>>>>  Projet:   Création de 4 pages en HTML/CSS reliées entre elles pour la web@academie.
+
+
+  >>>>>> Objectif personnel:    Appréhender flexbox & utiliser des propriétées facilitant la mise en place d'un site reponsive.  
+  
+  >>>>>> Objectif personnel "bonus":      Développer le site en évitant au maximum l'utilisation de classes et ID pour pratiquer 
+                                          l'utilisation des selecteurs. Mon but étant de développer le site comme si je n'avais pas accès au HTML
+                                          comme cela pourrait etre le cas dans certains projets web. //fail//
+*/
+
+
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------
+ |                                Partie css 1 : Contient les propriétés communues à l'ensemble des pages.                               |
+   -------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/*----------------------------------------------------------
+  |                 a) typographie & color                  |
+  ----------------------------------------------------------*/
+  
+  @font-face {
+    font-family: 'Caveat';
+    src:url('../fonts/Caveat/Caveat-Regular.ttf') format('truetype');
+ }
+
+  @font-face { 
+    font-family: 'Lato';
+    src:url('../fonts/Lato/Lato-Regular.ttf') format('truetype');
+
+  }
+
+  :root {
+    /* Background */
+    --background-color: rgb(250,250,250);
+    --background-form: rgb(247, 247, 247);
+
+    /* Text colors*/
+    --h1-color:rgb(77, 42, 12);
+    --strong-element-color: rgb(115, 63, 18);
+    --text-color-links: rgb(0,126,153);
+    --text-color-nav:  rgb(115, 63, 18);
+    --text-color-nav-hover: rgb(70, 34, 3);
+
+    /* border color */
+    --border-layout: rgb(180, 175, 181);
+    --border-form:  rgb(232, 232, 232);
+    --img-border-color:  rgb(3, 1, 1);
+  }
+
+  /*-----------------------------------------------------------------
+  |            b) Styles elements communs à toutes les pages        |
+   ------------------------------------------------------------------*/
+
+strong {
+  color: var(--strong-element-color);
+
+}
+
+a {
+  color: var(--text-color-links);
+  text-decoration: underline;
+
+  }
+
+h1, h2 {
+  color: var(--h1-color);
+}
+
+/* p {
+  hyphens:auto;
+} */
+
+
+/*--------------------------------------------------------------------------
+  |                       c) Le template                                    |
+ ---------------------------------------------------------------------------*/
+
+
+
+* {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 16px;
+  }
+    
+  body {
+    background-color: var(--background-color)
+  }
+
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1900px;
+    margin: 0 auto;
+  }
+  
+  header {
+    flex-basis: 100%;
+  }
+
+  header > h1  {
+    margin: 0;
+    font-size: 15rem;
+    font-family: 'Caveat', cursive;
+    text-transform: capitalize;
+    text-align: center;
+  }
+  
+  nav {
+    align-self: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin: 75px 8px 8px 8px;
+    padding: 0.6em;
+    width: 85%;
+    border-bottom: 1px solid var(--border-layout);
+    text-align: center;
+    background-color: var(--background-color);
+  }
+  
+  nav a {
+    margin: 1em;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--text-color-nav);
+  }
+  
+    nav a:hover {
+    transition: all 0.2s 0s linear;
+    color: var(--text-color-nav-hover);
+  
+  }
+  
+  main {
+    align-self: center;
+    width: 85%;  
+  }
+  
+  section {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1em;
+    margin-bottom: 1.25em;
+    min-height: 100vh;
+
+    box-shadow: 9px 12px 13px -9px rgba(0,0,0,0.4);
+    border-radius: 11px 11px 11px 11px;
+    border: 1px solid var(--border-layout);
+  }
+
+  
+  .Section__button {
+    border: 2px solid var(--border-layout);
+    padding: 1em;
+    margin-bottom: 1em;
+    align-self: baseline;
+  }
+
+  .Section__button a {
+    text-decoration: none;
+  }
+
+  footer {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  footer > p {
+    display: inline-flex;
+  }
+
+
+  img[src*="social_media"] {
+    max-width: 40px;
+    height: auto;
+    margin: 0.5em
+}
+
+
+  /*------------------------------------------------------------------------------------------------------------------------
+    |                                      Partie css 2: Index.html                                                         |
+    ------------------------------------------------------------------------------------------------------------------------*/
+
+  img[src*="index"] {
+    width: 100%;
+    height: auto;
+    margin-top: 4.6em;
+    max-width: 499px;
+    max-height: 374px;
+    border: 3px solid var(--img-border-color);
+      }
+    
+  .Biography {
+    font-family: 'Lato';
+    line-height: 1.7;
+    flex-basis: 45%;
+    text-align: justify;
+    margin-left: 8em;
+}
+
+  .Biography > h2 {
+    text-align: center;
+ }
+  
+  .Colone__container {
+    width: 90%;
+    columns: 3;
+    font-family: 'Lato';
+    line-height: 1.7;
+    font-size: 1rem;
+    column-gap: 3em;
+    text-align: justify;
+}
+   /* Passage en inline-flex pour aligner les 3 colones. */
+  .Colone__title, .Colone__container p {
+    display: inline-flex;
+    width: 100%;
+  }
+
+  .Colone__title h2 {
+    text-align: center;
+  }
+  
+    /*------------------------------------------------------------------------------------------------------------------------------
+   |                                                  Partie 3 creations.html                                                       |
+   -------------------------------------------------------------------------------------------------------------------------------*/
+
+   .creations__container h2 {
+    flex-basis: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    
+  }
+
+  img[src*="creations"] {
+    width: 100%;
+    margin-bottom: 5em;
+  }
+
+  /*-------------------------------------------
+    | Style box caracteristiques techniques   |
+    ------------------------------------------*/
+
+
+  .desc__creations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .desc__creations h3 {
+    text-align: center;
+    border: 1px dashed black;
+    padding: 1em;
+    flex-basis: 90%;
+
+  }
+
+  .desc__creations ul {
+    flex-basis: 70%;
+  }
+
+  .box-price {
+    align-self: center;
+    border: 1px solid var(--border-layout);
+    padding: 1em 2em;
+    border-radius: 0.2em;
+  }
+
+     /* img__container (lampes) en display flex pour pouvoir
+     créer un espace entre les items sans avoir à utilser de marge + flex-wrap
+     pour passage les unes en dessous des autres sur fenetre réduite */
+
+     .img__container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    
+  /*--------------------------------------------------------------------------------------------------------------------------------
+   |                                             Partie 4: Tarif.html                                                              |
+   -------------------------------------------------------------------------------------------------------------------------------- */ 
+                                                            
+
+  img[src*="tarifs"] {
+    display: block;
+    margin: 0 auto;
+    border : 1px solid black;
+    margin-top: 1em;
+    width: 100%;
+    height: auto;
+    max-width: 1200px;
+    max-height: 706px;
+    
+  }
+  
+  .tarifs__desc {
+
+    margin: 1em 0;
+      font-family: 'Lato';
+      line-height: 1.7;
+      font-size: 1rem;
+      text-align: justify;
+  }
+
+  .tarifs__desc h1 {
+    text-align: center;
+  }
+
+  .tarifs__desc p {
+    text-align: justify;
+    width: 80%;
+    margin: 0 auto;
+    }
+
+    table {
+      width: 80%;
+      margin: 1em auto;
+    }
+    thead tr th:nth-child(n+2) {
+      text-align: center;
+    }
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  tbody > tr > th {
+    text-align: initial;
+    font-weight: 400;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  .tarif__container p:nth-last-of-type(1) {
+    text-align: right;
+    font-size: 0.8rem;
+    font-style: italic;
+  }
+
+  .tarif__container p:nth-of-type(3) {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 1em auto;
+    border: 1px dashed black;
+  }
+
+/* -------------------------------------------------------------------------------------------------------------------------------
+  |                                                Partie css 5: Contact.html                                                     |
+  -------------------------------------------------------------------------------------------------------------------------------*/
+
+  
+  .Contact__container h2 {
+    flex-basis: 100%;
+    text-align: center;
+    }
+
+  .Contact__container article p {
+    text-align: center;
+  }
+
+  .Contact__container article {
+    width: 100%;
+  }
+
+
+/*-----------------------------
+  | Stylisation du formulaire |
+  -----------------------------*/
+  
+
+  form {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  align-items: center;
+
+  }
+
+  label, input {
+    width: 70%;
+  }
+
+  label {
+    margin-top: 15px;
+    font-size: 1rem;
+    text-transform: capitalize;
+  }
+
+  input {
+    border-radius:0.6em; 
+    padding:0.500em;
+    margin-top: 3px;
+    border: 2px solid var(--border-form);
+
+  }
+
+  input:focus, textarea:focus {
+    background-color: var(--background-form);
+
+  }
+
+  textarea {
+    width: 70%;
+    height: 300px;
+    margin-top: 0.6em;
+    resize: none;
+    font-size:1rem;
+    border-radius:10px; 
+    padding:1em;
+    border: 2px solid var(--border-form);
+
+  }
+
+    input[type="submit"] {
+    width: 15%;
+    margin-top: 0.6em;
+    margin-left: 55%;
+    margin-bottom: 1em;
+  }
+
+    /*-----------------------------------------------------------------------------------------------------------------------------
+      |                                               Media queries                                                               |
+      ----------------------------------------------------------------------------------------------------------------------------*/ 
+
+      /*---------------------------------------------------------------------------------------
+        |                                     Template                                        |
+        ---------------------------------------------------------------------------------------*/
+        
+
+        @media screen and (max-width: 1190px) {
+          header > h1 {
+            font-size: 10rem;
+          }
+
+          nav {
+            margin-top: 0px;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+          header > h1 {
+            font-size: 7rem;
+          }
+        }
+
+        @media screen and (max-width: 710px) {
+          html {
+            font-size: 15px;
+          }
+        }
+
+        @media screen and (max-width: 540px) {
+          nav {
+            display: flex;
+            flex-direction: column;
+            position: initial;
+          }
+  
+          nav a {
+            margin: 0;
+          }
+  
+          header > h1 {
+            font-size: 4rem;
+          }
+          
+        }
+
+        @media screen and (max-width: 620px) {
+          nav a {
+            margin: 0.5em;
+          }
+        }
+  
+  
+  
+        @media screen and (max-width: 310px) {
+          header > h1 {
+            font-size: 3rem;
+          }
+        }
+
+
+
+
+        /*--------------------------------------------------------------------------------------
+        |                                 Index.html                                            |
+        ----------------------------------------------------------------------------------------*/
+
+
+      @media screen and (max-width: 1430px) {
+       .Biography { 
+         margin-left: 5em;
+       }
+      }
+
+      @media screen and (max-width: 1300px) {
+        .Biography {
+          margin-left: 1em;
+        }
+      }
+
+      @media screen and (max-width: 1200px) {
+        .Biography {
+          flex-basis: 100%;
+          margin-right: 1em;
+        }
+      }
+
+      @media screen and (max-width: 1024px) {
+        .Colone__container {
+          columns: inherit;
+        }
+      }
+
+       /*--------------------------------------------------------------------------------------
+        |                                 Creations.html                                       |
+        ----------------------------------------------------------------------------------------*/
+
+        @media screen and (max-width: 540px) {
+          ul {
+            flex-basis: initial;
+            padding-left: 0px;;
+          }
+        }
+
+
+
+
+
