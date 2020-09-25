@@ -167,7 +167,7 @@ h1, h2 {
   .Section__button {
     border: 2px solid var(--border-layout);
     padding: 1em;
-    margin-bottom: 1em;
+    margin: 1em 0;
     align-self: baseline;
   }
 
@@ -307,36 +307,45 @@ h1, h2 {
    -------------------------------------------------------------------------------------------------------------------------------- */ 
                                                             
 
-  img[src*="tarifs"] {
+ 
+   img[src*="tarifs"] {
     display: block;
     margin: 0 auto;
     border : 1px solid black;
-    margin-top: 1em;
+    margin: 1em 1em;
     width: 100%;
     height: auto;
     max-width: 1200px;
     max-height: 706px;
     
   }
-  
-  .tarifs__desc {
 
-    margin: 1em 0;
-      font-family: 'Lato';
-      line-height: 1.7;
-      font-size: 1rem;
-      text-align: justify;
-  }
-
-  .tarifs__desc h1 {
-    text-align: center;
-  }
-
-  .tarifs__desc p {
+  .tarif__container {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Lato';
+    line-height: 1.7;
+    font-size: 1rem;
     text-align: justify;
-    width: 80%;
-    margin: 0 auto;
-    }
+  }
+
+  .tarif__container p {
+    text-align: justify;
+    flex-basis: 80%;
+    margin: auto;
+  }
+
+  #box-garantis {
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 1em auto;
+    border: 1px dashed black;
+  }
+
+/*-----------------------------------------------
+  |             Stylisation du tableau          |
+  ----------------------------------------------*/
 
     table {
       width: 80%;
@@ -359,18 +368,11 @@ h1, h2 {
     text-align: center;
   }
 
-  .tarif__container p:nth-last-of-type(1) {
+   .tarif__container p:nth-last-of-type(1) {
     text-align: right;
     font-size: 0.8rem;
     font-style: italic;
-  }
-
-  .tarif__container p:nth-of-type(3) {
-    text-align: center;
-    font-size: 1.5rem;
-    margin: 1em auto;
-    border: 1px dashed black;
-  }
+    flex-basis: 90%;
 
 /* -------------------------------------------------------------------------------------------------------------------------------
   |                                                Partie css 5: Contact.html                                                     |
@@ -451,7 +453,7 @@ h1, h2 {
       ----------------------------------------------------------------------------------------------------------------------------*/ 
 
       /*---------------------------------------------------------------------------------------
-        |                                     Template                                        |
+        |                                    Medias queries: Template                           |
         ---------------------------------------------------------------------------------------*/
         
 
@@ -512,7 +514,7 @@ h1, h2 {
 
 
         /*--------------------------------------------------------------------------------------
-        |                                 Index.html                                            |
+        |                                 Medias queries Index.html                              |
         ----------------------------------------------------------------------------------------*/
 
 
@@ -542,7 +544,7 @@ h1, h2 {
       }
 
        /*--------------------------------------------------------------------------------------
-        |                                 Creations.html                                       |
+        |                                Medias queries Creations.html                          |
         ----------------------------------------------------------------------------------------*/
       
       @media screen and (max-width: 1341px) {
@@ -554,13 +556,16 @@ h1, h2 {
 
         @media screen and (max-width: 540px) {
           ul {
-            flex-basis: initial;
-            padding-left: 0px;;
+            padding-left: 0px;
           }
           
         }
 
+        
+       /*--------------------------------------------------------------------------------------
+        |                                Medias queries tarif.html                             |
+        ----------------------------------------------------------------------------------------*/
 
 
-
+        
 
