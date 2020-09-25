@@ -37,6 +37,7 @@
     /* Background */
     --background-color: rgb(250,250,250);
     --background-form: rgb(247, 247, 247);
+    --background-box-price: rgb(247, 247, 247);
 
     /* Text colors*/
     --h1-color:rgb(77, 42, 12);
@@ -44,6 +45,7 @@
     --text-color-links: rgb(0,126,153);
     --text-color-nav:  rgb(115, 63, 18);
     --text-color-nav-hover: rgb(70, 34, 3);
+    --text-color-box-price: rgb(3, 1, 1);
 
     /* border color */
     --border-layout: rgb(180, 175, 181);
@@ -248,7 +250,12 @@ h1, h2 {
 
   img[src*="creations"] {
     width: 100%;
-    margin-bottom: 5em;
+  }
+
+  /*fix taille de l'image beaucoup trop grande sur grand écran*/
+  #img__classique__size {
+    width: 100%;
+    max-width: 900px;
   }
 
   /*-------------------------------------------
@@ -279,11 +286,13 @@ h1, h2 {
     border: 1px solid var(--border-layout);
     padding: 1em 2em;
     border-radius: 0.2em;
+    color: var(--text-color-box-price);
+    background-color: var(--background-box-price);
+    ;
   }
 
-     /* img__container (lampes) en display flex pour pouvoir
-     créer un espace entre les items sans avoir à utilser de marge + flex-wrap
-     pour passage les unes en dessous des autres sur fenetre réduite */
+     /* img__container (lampes) en display flex/space around pour pouvoir
+     créer un espace entre les items sans avoir à utilser de marge.*/
 
      .img__container {
       display: flex;
@@ -528,19 +537,27 @@ h1, h2 {
 
       @media screen and (max-width: 1024px) {
         .Colone__container {
-          columns: inherit;
+          columns: 1;
         }
       }
 
        /*--------------------------------------------------------------------------------------
         |                                 Creations.html                                       |
         ----------------------------------------------------------------------------------------*/
+      
+      @media screen and (max-width: 1341px) {
+        .img__container {
+          /* flex-direction: column; */
+          max-width: 375px; 
+        }
+      }
 
         @media screen and (max-width: 540px) {
           ul {
             flex-basis: initial;
             padding-left: 0px;;
           }
+          
         }
 
 
