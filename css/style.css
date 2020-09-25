@@ -343,6 +343,9 @@ h1, h2 {
     border: 1px dashed black;
   }
 
+  .dl_price {
+    display: none;
+  }
 /*-----------------------------------------------
   |             Stylisation du tableau          |
   ----------------------------------------------*/
@@ -373,13 +376,14 @@ h1, h2 {
     font-size: 0.8rem;
     font-style: italic;
     flex-basis: 90%;
+   }
 
 /* -------------------------------------------------------------------------------------------------------------------------------
   |                                                Partie css 5: Contact.html                                                     |
   -------------------------------------------------------------------------------------------------------------------------------*/
 
   
-  .Contact__container h2 {
+.Contact__container h2 {
     flex-basis: 100%;
     text-align: center;
     }
@@ -565,6 +569,40 @@ h1, h2 {
        /*--------------------------------------------------------------------------------------
         |                                Medias queries tarif.html                             |
         ----------------------------------------------------------------------------------------*/
+
+        @media screen and (max-width: 540px) {
+          .tarif__container h2 {
+            font-size: 1.2rem;
+          }
+        }
+
+        @media screen and (max-width: 400px) {
+          .tarif__container h2 {
+            margin: auto 1em;
+          }
+
+          table {
+            font-size: 0.9rem;
+          }
+        }
+
+        @media screen and (max-width: 330px) {
+          table {
+            font-size: 0.7rem;
+          }
+        }
+
+        @media screen and (max-width: 259px) {
+          table {
+            display: none;
+          }
+
+          .dl-price {
+            display: block;
+            color: red;
+            border: 2px solid black;
+          }
+        }
 
 
         
