@@ -581,6 +581,12 @@ h1, h2 {
           .tarif__container h2 {
             font-size: 1.2rem;
           }
+
+          label, input, textarea {
+            width: 90%;
+          }
+
+
         }
 
         @media screen and (max-width: 400px) {
@@ -599,18 +605,19 @@ h1, h2 {
           }
         }
 
-        @media screen and (max-width: 259px) {
+        /*---------------------Test------------------------*/
+        /* @media screen and (max-width: 259px) {                 
           table {
-            display: none;
-          }
-
+            display: none;                                        
+          }                                                       
+                                                                  
           .dl-price {
             display: block;
             color: red;
             border: 2px solid black;
           }
-        }
-
-
+        } 
+        /*------------------------------------------------*/
+         
         
 
