@@ -52,7 +52,7 @@
     /* border color */
     --border-layout: rgb(180, 175, 181);
     --border-form:  rgb(232, 232, 232);
-    --img-border-color:  rgb(3, 1, 1);
+    --img-border-color:  rgba(3, 1, 1);
   }
 
   /*-----------------------------------------------------------------
