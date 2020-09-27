@@ -38,6 +38,7 @@
     --background-color: rgb(250,250,250);
     --background-form: rgb(247, 247, 247);
     --background-box-price: rgb(247, 247, 247);
+    --background-btn-box: rgb(201, 200, 197);
 
     /* Text colors*/
     --h1-color:rgb(77, 42, 12);
@@ -46,6 +47,7 @@
     --text-color-nav:  rgb(115, 63, 18);
     --text-color-nav-hover: rgb(70, 34, 3);
     --text-color-box-price: rgb(3, 1, 1);
+    --text-color-btn-box: rgb(77, 42, 12);
 
     /* border color */
     --border-layout: rgb(180, 175, 181);
@@ -165,23 +167,27 @@ h1, h2 {
 
   
   .Section__button {
-    border: 2px solid var(--border-layout);
     padding: 1em;
     margin: 1em 0;
-    align-self: baseline;
+    align-self: flex-end;
+    border: 2px solid var(--border-layout);
+    border-radius: 0.3em;
+    background-color: var(--background-btn-box);
   }
 
   .Section__button a {
     text-decoration: none;
+    color: var(--text-color-btn-box);
+  }
+
+  .section_button a:active {
+    position: relative;
+    top: 1em;
   }
 
   footer {
     flex-basis: 100%;
     text-align: center;
-  }
-
-  footer > p {
-    display: inline-flex;
   }
 
 
@@ -257,7 +263,6 @@ h1, h2 {
     width: 100%;
     max-width: 900px;
   }
-
   /*-------------------------------------------
     | Style box caracteristiques techniques   |
     ------------------------------------------*/
@@ -430,6 +435,7 @@ h1, h2 {
 
   input:focus, textarea:focus {
     background-color: var(--background-form);
+    outline: none;
 
   }
 
