@@ -74,6 +74,11 @@ h1, h2 {
   color: var(--h1-color);
 }
 
+address {
+  font-family: "Lato";
+  font-style: normal;
+  text-align: center;
+}
 /* p {
   hyphens:auto;
 } */
@@ -400,6 +405,7 @@ h1, h2 {
   .Contact__container article {
     width: 100%;
   }
+
 
 
 /*-----------------------------
