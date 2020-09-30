@@ -429,6 +429,7 @@
   /*nom des préstation*/
   tbody tr > th { 
     font-weight: normal;
+    text-align: left;
   }
 
 
