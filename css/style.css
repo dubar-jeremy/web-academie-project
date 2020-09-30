@@ -398,7 +398,7 @@
   ----------------------------------------------*/
 
   table {
-    width: 95%;
+    width: 85%;
     margin: 1em auto;
   }
 
@@ -650,6 +650,10 @@
   @media screen and (max-width: 540px) {
     .tarif__container h2 {
       font-size: 1.2rem;
+    }
+
+    table {
+      width: 95%;
     }
   }
 
