@@ -139,7 +139,6 @@
     flex-wrap: wrap;
     justify-content: center;
     max-width: 1900px;
-    margin: 0 auto;
   }
   
   header {
@@ -202,7 +201,7 @@
   }
 
   
-  .Section__button {
+  .btn__box {
     padding: 1em;
     margin: 1em 0;
     align-self: flex-end;
@@ -211,7 +210,7 @@
     background-color: var(--background-btn-box);
   }
 
-  .Section__button a {
+  .btn__box a {
     text-decoration: none;
     color: var(--text-color-btn-box);
   }
@@ -251,7 +250,7 @@
     border: 3px solid var(--img-border-color);
   }
     
-  .Biography {
+  .biography {
     font-family: 'Lato';
     line-height: 1.7;
     flex-basis: 45%;
@@ -259,11 +258,11 @@
     margin-left: 8em;
   }
 
-  .Biography > h2 {
+  .biography > h2 {
     text-align: center;
   }
   
-  .Colone__container {
+  .col__container {
     width: 90%;
     columns: 3;
     font-family: 'Lato';
@@ -273,12 +272,12 @@
     text-align: justify;
   }
    /* Passage en inline-flex pour aligner les 3 colones. */
-  .Colone__title, .Colone__container p {
+  .col__title, .col__container p {
     display: inline-flex;
     width: 100%;
   }
 
-  .Colone__title h2 {
+  .__title h2 {
     text-align: center;
   }
   
@@ -327,7 +326,7 @@
     flex-basis: 70%;
   }
 
-  .box-price {
+  .box__price {
     align-self: center;
     border: 1px solid var(--border-layout);
     padding: 1em 2em;
@@ -449,17 +448,17 @@
 ------------------------------------------------------------------------------------------------*/
 
   
-  .Contact__container h2 {
+  .contact__container h2 {
     flex-basis: 100%;
     text-align: center;
   }
 
 
-  .Contact__container article p {
+  .contact__container article p {
     text-align: center;
   }
 
-  .Contact__container article {
+  .contact__container article {
     width: 100%;
   }
 
@@ -598,26 +597,26 @@
 ------------------------------------------------------------------------------------------------*/
 
   @media screen and (max-width: 1430px) {
-  .Biography { 
+  .biography { 
     margin-left: 5em;
   }
 }
 
   @media screen and (max-width: 1300px) {
-    .Biography {
+    .biography {
       margin-left: 1em;
     }
   }
 
   @media screen and (max-width: 1200px) {
-    .Biography {
+    .biography {
       flex-basis: 100%;
       margin-right: 1em;
     }
   }
 
   @media screen and (max-width: 1024px) {
-    .Colone__container {
+    .col__container {
       columns: 1;
     }
   }
